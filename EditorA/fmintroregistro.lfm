@@ -1,0 +1,8 @@
+object fmIntroReg: TfmIntroReg
+  Left = 503
+  Height = 240
+  Top = 475
+  Width = 320
+  Caption = 'Insertar Registro(s)'
+  LCLVersion = '2.0.10.0'
+end

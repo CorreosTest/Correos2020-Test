@@ -1,0 +1,254 @@
+object fmIntroRegistros: TfmIntroRegistros
+  Left = 337
+  Height = 444
+  Top = 229
+  Width = 677
+  Caption = 'Insertar Registro(s)'
+  ClientHeight = 444
+  ClientWidth = 677
+  OnActivate = FormActivate
+  OnClose = FormClose
+  Position = poScreenCenter
+  LCLVersion = '2.0.12.0'
+  object btInsertar: TButton
+    AnchorSideRight.Control = gbRegistros
+    AnchorSideRight.Side = asrBottom
+    Left = 589
+    Height = 25
+    Top = 402
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = '&Insertar'
+    OnClick = btInsertarClick
+    TabOrder = 0
+  end
+  object btCancelar: TButton
+    AnchorSideRight.Control = btInsertar
+    Left = 514
+    Height = 25
+    Top = 402
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = '&Cancelar'
+    OnClick = btCancelarClick
+    TabOrder = 1
+  end
+  object cbID_TESTauto: TCheckBox
+    AnchorSideBottom.Control = cbMantDialog
+    Left = 16
+    Height = 19
+    Top = 358
+    Width = 113
+    Anchors = [akLeft, akBottom]
+    Caption = 'ID_TEST generado'
+    Checked = True
+    OnChange = cbID_TESTautoChange
+    State = cbChecked
+    TabOrder = 2
+  end
+  object cbMantDialog: TCheckBox
+    Left = 16
+    Height = 19
+    Top = 377
+    Width = 270
+    Anchors = [akLeft, akBottom]
+    Caption = 'mantener el diálogo abierto después de insertar'
+    TabOrder = 3
+  end
+  object gbRegistros: TGroupBox
+    AnchorSideBottom.Control = cbID_TESTauto
+    Left = 16
+    Height = 350
+    Top = 8
+    Width = 648
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ClientHeight = 330
+    ClientWidth = 644
+    TabOrder = 4
+    object ID_TEST: TLabel
+      Left = 18
+      Height = 15
+      Top = 32
+      Width = 40
+      Caption = 'ID_TEST'
+      ParentColor = False
+    end
+    object eID_TEST: TEdit
+      Left = 128
+      Height = 23
+      Top = 24
+      Width = 88
+      Enabled = False
+      OnKeyPress = eID_TESTKeyPress
+      TabOrder = 0
+    end
+    object lNomTest: TLabel
+      Left = 18
+      Height = 15
+      Top = 64
+      Width = 78
+      Caption = 'NOMBRE_TEST'
+      ParentColor = False
+    end
+    object eNOMBRE_TEST: TEdit
+      Left = 128
+      Height = 23
+      Top = 56
+      Width = 494
+      Anchors = [akTop, akLeft, akRight]
+      OnKeyPress = eNOMBRE_TESTKeyPress
+      TabOrder = 1
+    end
+    object lTema: TLabel
+      Left = 18
+      Height = 15
+      Top = 96
+      Width = 31
+      Caption = 'TEMA'
+      ParentColor = False
+    end
+    object eTEMA: TEdit
+      Left = 128
+      Height = 23
+      Top = 88
+      Width = 88
+      OnKeyPress = eTEMAKeyPress
+      TabOrder = 2
+    end
+    object lPregunta: TLabel
+      Left = 18
+      Height = 15
+      Top = 128
+      Width = 58
+      Caption = 'PREGUNTA'
+      ParentColor = False
+    end
+    object ePREGUNTA: TEdit
+      Left = 128
+      Height = 23
+      Top = 120
+      Width = 494
+      Anchors = [akTop, akLeft, akRight]
+      OnChange = ePREGUNTAChange
+      OnKeyPress = ePREGUNTAKeyPress
+      TabOrder = 3
+    end
+    object lA: TLabel
+      Left = 18
+      Height = 15
+      Top = 160
+      Width = 8
+      Caption = 'A'
+      ParentColor = False
+    end
+    object eA: TEdit
+      Left = 128
+      Height = 23
+      Top = 152
+      Width = 494
+      Anchors = [akTop, akLeft, akRight]
+      OnKeyPress = eAKeyPress
+      TabOrder = 4
+    end
+    object lB: TLabel
+      Left = 18
+      Height = 15
+      Top = 192
+      Width = 7
+      Caption = 'B'
+      ParentColor = False
+    end
+    object eB: TEdit
+      Left = 128
+      Height = 23
+      Top = 183
+      Width = 494
+      Anchors = [akTop, akLeft, akRight]
+      OnKeyPress = eBKeyPress
+      TabOrder = 5
+    end
+    object lC: TLabel
+      Left = 18
+      Height = 15
+      Top = 224
+      Width = 8
+      Caption = 'C'
+      ParentColor = False
+    end
+    object eC: TEdit
+      Left = 128
+      Height = 23
+      Top = 216
+      Width = 494
+      Anchors = [akTop, akLeft, akRight]
+      OnKeyPress = eCKeyPress
+      TabOrder = 6
+    end
+    object lD: TLabel
+      Left = 17
+      Height = 15
+      Top = 256
+      Width = 8
+      Caption = 'D'
+      ParentColor = False
+    end
+    object eD: TEdit
+      Left = 128
+      Height = 23
+      Top = 248
+      Width = 494
+      Anchors = [akTop, akLeft, akRight]
+      OnChange = eDChange
+      OnKeyPress = eDKeyPress
+      TabOrder = 7
+    end
+    object lCorrecta: TLabel
+      Left = 16
+      Height = 15
+      Top = 288
+      Width = 45
+      Caption = 'Correcta'
+      ParentColor = False
+    end
+    object cmbCorrecta: TComboBox
+      Left = 128
+      Height = 23
+      Top = 280
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'A'
+        'B'
+        'C'
+        'D'
+      )
+      Style = csDropDownList
+      TabOrder = 8
+      Text = 'A'
+    end
+  end
+  object btBorrarCasillas: TButton
+    AnchorSideRight.Control = btCancelar
+    AnchorSideBottom.Side = asrBottom
+    Left = 426
+    Height = 25
+    Top = 402
+    Width = 88
+    Anchors = [akRight, akBottom]
+    Caption = '&Borrar Test'
+    OnClick = btBorrarCasillasClick
+    TabOrder = 5
+  end
+  object BtBorrarRetornoCarro: TButton
+    AnchorSideRight.Control = btBorrarCasillas
+    Left = 245
+    Height = 25
+    Top = 402
+    Width = 181
+    Anchors = [akRight, akBottom]
+    Caption = 'B&orrar Retornos de Carro'
+    OnClick = BtBorrarRetornoCarroClick
+    TabOrder = 6
+  end
+end

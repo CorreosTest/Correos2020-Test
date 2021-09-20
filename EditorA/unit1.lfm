@@ -1,0 +1,333 @@
+object Form1: TForm1
+  Left = 114
+  Height = 593
+  Top = 66
+  Width = 836
+  Caption = 'Correos 2020 Editor test'
+  ClientHeight = 573
+  ClientWidth = 836
+  Menu = miGeneral
+  OnClose = CerrandoAplicacion
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.12.0'
+  object DBGrid1: TDBGrid
+    AnchorSideTop.Control = rgCampo
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = DBNavigator1
+    Left = 0
+    Height = 371
+    Top = 176
+    Width = 836
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    FixedColor = 14539471
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderHotTracking, dgHeaderPushedLook, dgAutoSizeColumns, dgDisplayMemoText]
+    ParentFont = False
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+    TitleStyle = tsNative
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 547
+    Width = 241
+    Anchors = [akLeft, akBottom]
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    Options = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object BTTGuardar: TButton
+    AnchorSideLeft.Control = Posicion
+    AnchorSideRight.Control = DBGrid1
+    AnchorSideRight.Side = asrBottom
+    Left = 647
+    Height = 25
+    Top = 547
+    Width = 189
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Left = 229
+    BorderSpacing.Bottom = 9
+    Caption = '&Guardar Todos los Cambios'
+    Enabled = False
+    OnClick = BTTGuardarClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = DBNavigator1
+    AnchorSideLeft.Side = asrBottom
+    Left = 267
+    Height = 15
+    Top = 552
+    Width = 53
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 26
+    Caption = 'Registro #'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Posicion: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideLeft.Side = asrBottom
+    Left = 320
+    Height = 15
+    Top = 552
+    Width = 6
+    Anchors = [akLeft, akBottom]
+    Caption = '0'
+    Font.Color = clBlue
+    ParentColor = False
+    ParentFont = False
+  end
+  object rgCampo: TRadioGroup
+    Left = 8
+    Height = 176
+    Top = 0
+    Width = 225
+    AutoFill = True
+    Caption = 'Campo a buscar'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 156
+    ClientWidth = 221
+    Enabled = False
+    Items.Strings = (
+      'NOMBRE__TEST'
+      'TEMA'
+      'PREGUNTA'
+      'A'
+      'B'
+      'C'
+      'D'
+      'ID_Test'
+    )
+    ParentFont = False
+    TabOrder = 3
+  end
+  object btInserRegistro: TButton
+    AnchorSideTop.Control = gbBuscar
+    AnchorSideTop.Side = asrBottom
+    Left = 240
+    Height = 32
+    Top = 127
+    Width = 120
+    BorderSpacing.Top = 7
+    Caption = 'Insertar Registro'
+    Enabled = False
+    OnClick = btInserRegistroClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object gbBuscar: TGroupBox
+    Left = 240
+    Height = 120
+    Top = 0
+    Width = 588
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 10
+    ClientHeight = 100
+    ClientWidth = 584
+    ParentFont = False
+    TabOrder = 5
+    object EdDato: TEdit
+      Left = 8
+      Height = 23
+      Top = 16
+      Width = 486
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Right = 19
+      Enabled = False
+      OnKeyPress = EdDatoKeyPress
+      ParentFont = False
+      TabOrder = 0
+    end
+    object LConsulRealizar: TLabel
+      Left = 8
+      Height = 15
+      Top = 0
+      Width = 102
+      Caption = 'Consulta a realizar: '
+      ParentColor = False
+      ParentFont = False
+    end
+    object btBuscar: TButton
+      AnchorSideTop.Control = EdDato
+      AnchorSideBottom.Control = EdDato
+      AnchorSideBottom.Side = asrBottom
+      Left = 502
+      Height = 23
+      Top = 16
+      Width = 75
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '&Buscar'
+      Enabled = False
+      OnClick = btBuscarClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object btResetBusqueda: TButton
+      AnchorSideTop.Side = asrBottom
+      Left = 456
+      Height = 30
+      Top = 56
+      Width = 120
+      Anchors = [akRight, akBottom]
+      Caption = 'Borrar Busqueda'
+      Enabled = False
+      OnClick = btResetBusquedaClick
+      ParentFont = False
+      TabOrder = 2
+    end
+    object cbMayusMin: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 48
+      Width = 341
+      Caption = 'Sin distinción entre mayúsculas y minúsculas en la búsqueda'
+      Checked = True
+      Enabled = False
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 3
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Base de Datos Firebird|*.fdb'
+    Left = 552
+    Top = 328
+  end
+  object miGeneral: TMainMenu
+    Left = 464
+    Top = 328
+    object miArchivo: TMenuItem
+      Caption = '&Archivo'
+      OnClick = miArchivoClick
+      object miNuevaBase: TMenuItem
+        Caption = '&Nueva base de Datos en Blanco'
+        OnClick = miNuevaBaseClick
+      end
+      object miRegistrarBase: TMenuItem
+        Caption = '&Registrar base de datos existente'
+        OnClick = miRegistrarBaseClick
+      end
+      object miRegistrarBDreciente: TMenuItem
+        Caption = 'R&egistrar base de datos reciente'
+        Enabled = False
+        object miBd1: TMenuItem
+          Caption = 'miBd1'
+          Visible = False
+          OnClick = miBd1Click
+        end
+        object miBd2: TMenuItem
+          Caption = 'miBd2'
+          Visible = False
+          OnClick = miBd2Click
+        end
+        object miBd3: TMenuItem
+          Caption = 'miBd3'
+          Visible = False
+          OnClick = miBd3Click
+        end
+        object miBd4: TMenuItem
+          Caption = 'miBd4'
+          Visible = False
+          OnClick = miBd4Click
+        end
+        object miBd5: TMenuItem
+          Caption = 'miBd5'
+          Visible = False
+          OnClick = miBd5Click
+        end
+      end
+      object miBorrarBDRecientes: TMenuItem
+        Caption = '&Borrar BD Recientes'
+        Enabled = False
+        OnClick = miBorrarBDRecientesClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object miGuardCambios: TMenuItem
+        Caption = '&Guardar todos los cambios'
+        Enabled = False
+        OnClick = miGuardCambiosClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object miSalir: TMenuItem
+        Caption = '&Salir'
+        OnClick = miSalirClick
+      end
+    end
+    object miAyuda: TMenuItem
+      Caption = 'A&yuda'
+      object miAcerca: TMenuItem
+        Caption = 'A&cerca de'
+        OnClick = miAcercaClick
+      end
+    end
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    CheckTransactionParams = False
+    UseConnectionCharSetIfNone = False
+    Left = 40
+    Top = 328
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    AutoCalcFields = False
+    AfterScroll = SQLQuery1AfterScroll
+    Params = <>
+    Macros = <>
+    Left = 152
+    Top = 328
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = IBConnection1
+    Left = 256
+    Top = 328
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 640
+    Top = 328
+  end
+  object sqlGenerador: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 736
+    Top = 328
+  end
+  object sdGuardarBase: TSaveDialog
+    FileName = 'base1.fdb'
+    Filter = 'Base de Datos de Firebird|*.fdb'
+    Left = 368
+    Top = 328
+  end
+end
